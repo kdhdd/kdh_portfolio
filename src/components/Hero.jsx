@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, Mail } from 'lucide-react';
+import { ArrowDown, Download, Mail, Github } from 'lucide-react';
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -44,13 +44,6 @@ const CenterBox = styled.div`
   text-align: center;
 `;
 
-const Greeting = styled(motion.div)`
-  font-size: 1.125rem;
-  color: #0ea5e9;
-  font-weight: 500;
-  margin-bottom: 1rem;
-`;
-
 const Title = styled(motion.h1)`
   font-size: 3rem;
   font-weight: bold;
@@ -64,18 +57,10 @@ const Title = styled(motion.h1)`
   }
 `;
 
-const Subtitle = styled(motion.p)`
-  font-size: 1.25rem;
-  color: #334155;
-  margin-bottom: 2rem;
-  max-width: 32rem;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
 const Description = styled(motion.p)`
   font-size: 1.125rem;
   color: #64748b;
+  margin-top: 1.5rem;
   margin-bottom: 3rem;
   max-width: 48rem;
   margin-left: auto;
@@ -177,38 +162,28 @@ const Hero = () => {
     }
   };
 
+  const openGitHub = () => {
+    window.open('https://github.com/kdhdd', '_blank');
+  };
+
   return (
     <Section id="home">
       <BgPattern aria-hidden="true" />
       <CenterBox>
-        <Greeting
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          안녕하세요! Hello! 👋
-        </Greeting>
         <Title
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          I'm <span>Your Name</span>
+          백엔드 개발자 <span>김도현</span>입니다.
         </Title>
-        <Subtitle
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Full Stack Developer passionate about creating beautiful and functional web experiences
-        </Subtitle>
         <Description
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          I specialize in React, Node.js, and modern web technologies. 
-          Let's build something amazing together!
+          디테일한 부분도 대충하지 않는 <span>마인드</span>, <br />
+          포기하지 않고 <span>책임감</span>있게 임하는 개발자입니다.
         </Description>
         <ButtonRow
           initial={{ opacity: 0, y: 20 }}
@@ -218,17 +193,18 @@ const Hero = () => {
           <PrimaryButton
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={openGitHub}
           >
-            <Mail size={20} />
-            <span>Get In Touch</span>
+            <Github size={20} />
+            <span>GitHub</span>
           </PrimaryButton>
-          <SecondaryButton
+          {/* <SecondaryButton
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Download size={20} />
             <span>Download CV</span>
-          </SecondaryButton>
+          </SecondaryButton> */}
         </ButtonRow>
         <ScrollButton
           initial={{ opacity: 0 }}
