@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
+import Career from './components/Career';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -162,7 +162,7 @@ function App() {
             <Route path="/" element={
               <main>
                 <Hero />
-                <About />
+                <Career />
                 <Skills />
                 <Projects />
                 <Contact />

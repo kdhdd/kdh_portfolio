@@ -155,8 +155,8 @@ const FloatingCircle2 = styled(FloatingCircle)`
 `;
 
 const Hero = () => {
-  const scrollToAbout = () => {
-    const element = document.querySelector('#about');
+  const scrollToCareer = () => {
+    const element = document.querySelector('#career');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -210,7 +210,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          onClick={scrollToAbout}
+          onClick={scrollToCareer}
         >
           <span>Learn More</span>
           <motion.div
