@@ -25,6 +25,7 @@ const Section = styled.section`
 `;
 
 const CenterBox = styled.div`
+  margin-top: 1.5rem;
   width: 100vw;
   display: flex;
   flex-direction: column;
