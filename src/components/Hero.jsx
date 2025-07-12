@@ -1,11 +1,6 @@
-import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
-import { ArrowDown, Download, Mail, Github } from 'lucide-react';
-
-const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { ArrowDown, Github } from "lucide-react";
 
 const Section = styled.section`
   position: relative;
@@ -27,7 +22,7 @@ const BgPattern = styled.div`
   z-index: -10;
   background: linear-gradient(to bottom right, #f0f9ff, #fff);
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     opacity: 0.5;
@@ -92,7 +87,9 @@ const PrimaryButton = styled(motion.button)`
   gap: 0.5rem;
   cursor: pointer;
   transition: background 0.2s;
-  &:hover { background: #0369a1; }
+  &:hover {
+    background: #0369a1;
+  }
 `;
 
 const SecondaryButton = styled(motion.button)`
@@ -129,7 +126,9 @@ const ScrollButton = styled(motion.button)`
   margin-bottom: 2rem;
   cursor: pointer;
   transition: color 0.2s;
-  &:hover { color: #0ea5e9; }
+  &:hover {
+    color: #0ea5e9;
+  }
 `;
 
 const FloatingCircle = styled(motion.div)`
@@ -156,14 +155,14 @@ const FloatingCircle2 = styled(FloatingCircle)`
 
 const Hero = () => {
   const scrollToCareer = () => {
-    const element = document.querySelector('#career');
+    const element = document.querySelector("#career");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const openGitHub = () => {
-    window.open('https://github.com/kdhdd', '_blank');
+    window.open("https://github.com/kdhdd", "_blank");
   };
 
   return (
@@ -175,7 +174,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          백엔드 개발자 <span>김도현</span>입니다.
+          개발자 <span>김도현</span>입니다.
         </Title>
         <Description
           initial={{ opacity: 0, y: 20 }}
@@ -223,14 +222,19 @@ const Hero = () => {
       </CenterBox>
       <FloatingCircle1
         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <FloatingCircle2
         animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
       />
     </Section>
   );
 };
 
-export default Hero; 
+export default Hero;
