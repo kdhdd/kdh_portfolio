@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const NavBar = styled(motion.nav)`
   position: fixed;
@@ -11,10 +11,9 @@ const NavBar = styled(motion.nav)`
   z-index: 50;
   transition: all 0.3s;
   background: ${({ scrolled }) =>
-    scrolled ? 'rgba(255,255,255,0.8)' : 'transparent'};
-  box-shadow: ${({ scrolled }) =>
-    scrolled ? '0 2px 16px 0 #0002' : 'none'};
-  backdrop-filter: ${({ scrolled }) => (scrolled ? 'blur(8px)' : 'none')};
+    scrolled ? "rgba(255,255,255,0.8)" : "transparent"};
+  box-shadow: ${({ scrolled }) => (scrolled ? "0 2px 16px 0 #0002" : "none")};
+  backdrop-filter: ${({ scrolled }) => (scrolled ? "blur(8px)" : "none")};
 `;
 const Container = styled.div`
   width: 100vw;
@@ -25,8 +24,12 @@ const Container = styled.div`
 const NavRow = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 4rem;
+  position: relative;
+  @media (max-width: 767px) {
+    justify-content: flex-end;
+  }
 `;
 const Logo = styled(motion.div)`
   font-size: 2rem;
@@ -58,20 +61,7 @@ const NavBtn = styled.button`
     color: #0ea5e9;
   }
 `;
-const DarkModeBtn = styled(motion.button)`
-  background: #f1f5f9;
-  color: #0f172a;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  &:hover {
-    background: #bae6fd;
-    color: #0ea5e9;
-  }
-`;
+
 const MobileMenuBtn = styled(motion.button)`
   background: #f1f5f9;
   color: #0f172a;
@@ -85,7 +75,7 @@ const MobileMenuBtn = styled(motion.button)`
   }
 `;
 const MobileMenu = styled(motion.div)`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   background: #fff;
   border-top: 1px solid #e2e8f0;
   position: absolute;
@@ -117,24 +107,8 @@ const MobileNavBtn = styled.button`
     color: #0ea5e9;
   }
 `;
-const MobileDarkModeBtn = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: none;
-  border: none;
-  color: #334155;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: color 0.2s;
-  &:hover {
-    color: #0ea5e9;
-  }
-`;
 
-const Navbar = ({ darkMode, setDarkMode }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -142,49 +116,39 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Career', href: '#career' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#home" },
+    { name: "Career", href: "#career" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
 
   return (
-    <NavBar
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      scrolled={scrolled}
-    >
+    <NavBar initial={{ y: -100 }} animate={{ y: 0 }} scrolled={scrolled}>
       <Container>
         <NavRow>
-          <Logo whileHover={{ scale: 1.05 }}>Portfolio</Logo>
           <NavLinks>
             {navItems.map((item) => (
-              <NavBtn key={item.name} onClick={() => scrollToSection(item.href)}>
+              <NavBtn
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+              >
                 {item.name}
               </NavBtn>
             ))}
-            <DarkModeBtn
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setDarkMode(!darkMode)}
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </DarkModeBtn>
           </NavLinks>
           <MobileMenuBtn
             whileTap={{ scale: 0.9 }}
@@ -202,14 +166,13 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         >
           <MobileMenuList>
             {navItems.map((item) => (
-              <MobileNavBtn key={item.name} onClick={() => scrollToSection(item.href)}>
+              <MobileNavBtn
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+              >
                 {item.name}
               </MobileNavBtn>
             ))}
-            <MobileDarkModeBtn onClick={() => setDarkMode(!darkMode)}>
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
-            </MobileDarkModeBtn>
           </MobileMenuList>
         </MobileMenu>
       </Container>
@@ -217,4 +180,4 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
