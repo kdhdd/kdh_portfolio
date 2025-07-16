@@ -125,7 +125,6 @@ const Navbar = () => {
     { name: "Career", href: "#career" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href) => {

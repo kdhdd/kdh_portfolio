@@ -1,14 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Career from './components/Career';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { ThemeProvider } from "styled-components";
+import { createGlobalStyle } from "styled-components";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Career from "./components/Career";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Thanks from "./components/Thanks";
+import Footer from "./components/Footer";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -106,29 +106,29 @@ const GlobalStyle = createGlobalStyle`
 
 const lightTheme = {
   colors: {
-    primary: '#0ea5e9',
-    primaryLight: '#38bdf8',
-    primaryDark: '#0284c7',
-    background: '#ffffff',
-    surface: '#f8fafc',
-    text: '#334155',
-    textSecondary: '#64748b',
-    border: '#e2e8f0',
-    shadow: 'rgba(0, 0, 0, 0.1)',
+    primary: "#0ea5e9",
+    primaryLight: "#38bdf8",
+    primaryDark: "#0284c7",
+    background: "#ffffff",
+    surface: "#f8fafc",
+    text: "#334155",
+    textSecondary: "#64748b",
+    border: "#e2e8f0",
+    shadow: "rgba(0, 0, 0, 0.1)",
   },
 };
 
 const darkTheme = {
   colors: {
-    primary: '#38bdf8',
-    primaryLight: '#7dd3fc',
-    primaryDark: '#0ea5e9',
-    background: '#0f172a',
-    surface: '#1e293b',
-    text: '#e2e8f0',
-    textSecondary: '#94a3b8',
-    border: '#334155',
-    shadow: 'rgba(0, 0, 0, 0.3)',
+    primary: "#38bdf8",
+    primaryLight: "#7dd3fc",
+    primaryDark: "#0ea5e9",
+    background: "#0f172a",
+    surface: "#1e293b",
+    text: "#e2e8f0",
+    textSecondary: "#94a3b8",
+    border: "#334155",
+    shadow: "rgba(0, 0, 0, 0.3)",
   },
 };
 
@@ -137,7 +137,7 @@ function App() {
 
   useEffect(() => {
     // Check for user's preferred color scheme
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setDarkMode(true);
     }
   }, []);
@@ -145,9 +145,9 @@ function App() {
   useEffect(() => {
     // Apply dark mode to document
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 
@@ -155,21 +155,24 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Router>
-        <div className={darkMode ? 'dark' : ''}>
+        <div className={darkMode ? "dark" : ""}>
           <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-          
+
           <Routes>
-            <Route path="/" element={
-              <main>
-                <Hero />
-                <Career />
-                <Skills />
-                <Projects />
-                <Contact />
-              </main>
-            } />
+            <Route
+              path="/"
+              element={
+                <main>
+                  <Hero />
+                  <Career />
+                  <Skills />
+                  <Projects />
+                  <Thanks />
+                </main>
+              }
+            />
           </Routes>
-          
+
           <Footer />
         </div>
       </Router>

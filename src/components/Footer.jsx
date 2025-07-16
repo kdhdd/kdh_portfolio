@@ -1,6 +1,13 @@
-import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
-import { ArrowUp, Heart, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
+import {
+  ArrowUp,
+  Heart,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 
 const FooterSection = styled.footer`
   background: #0f172a;
@@ -25,7 +32,9 @@ const BackToTopBtn = styled(motion.button)`
   border: none;
   cursor: pointer;
   transition: background 0.2s;
-  &:hover { background: #0369a1; }
+  &:hover {
+    background: #0369a1;
+  }
 `;
 const Container = styled.div`
   width: 100vw;
@@ -88,7 +97,10 @@ const QuickLinkBtn = styled(motion.button)`
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
-  &:hover { background: #0ea5e9; color: #fff; }
+  &:hover {
+    background: #0ea5e9;
+    color: #fff;
+  }
 `;
 const SocialBox = styled(motion.div)`
   text-align: center;
@@ -114,7 +126,10 @@ const SocialBtn = styled(motion.a)`
   justify-content: center;
   font-size: 1.25rem;
   transition: background 0.2s, color 0.2s;
-  &:hover { background: #0ea5e9; color: #fff; }
+  &:hover {
+    background: #0ea5e9;
+    color: #fff;
+  }
 `;
 const Divider = styled.div`
   border-top: 1px solid #334155;
@@ -154,14 +169,14 @@ const HeartIcon = styled(Heart)`
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const socialLinks = [
-    { icon: <Github size={20} />, href: '#', label: 'GitHub' },
-    { icon: <Linkedin size={20} />, href: '#', label: 'LinkedIn' },
-    { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
-    { icon: <Instagram size={20} />, href: '#', label: 'Instagram' }
+    { icon: <Github size={20} />, href: "#", label: "GitHub" },
+    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
+    { icon: <Twitter size={20} />, href: "#", label: "Twitter" },
+    { icon: <Instagram size={20} />, href: "#", label: "Instagram" },
   ];
 
   return (
@@ -189,8 +204,8 @@ const Footer = () => {
           >
             <Logo>Your Name</Logo>
             <Desc>
-              Full Stack Developer passionate about creating innovative web solutions 
-              and beautiful user experiences.
+              Full Stack Developer passionate about creating innovative web
+              solutions and beautiful user experiences.
             </Desc>
           </LogoBox>
 
@@ -203,13 +218,15 @@ const Footer = () => {
           >
             <QuickLinksTitle>Quick Links</QuickLinksTitle>
             <QuickLinksList>
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((link, index) => (
+              {["Home", "Career", "Skills", "Projects"].map((link, index) => (
                 <QuickLinkBtn
                   key={index}
                   onClick={() => {
-                    const element = document.querySelector(`#${link.toLowerCase()}`);
+                    const element = document.querySelector(
+                      `#${link.toLowerCase()}`
+                    );
                     if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
+                      element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
                   whileHover={{ scale: 1.05 }}
@@ -259,7 +276,7 @@ const Footer = () => {
             >
               © {new Date().getFullYear()} Your Name. All rights reserved.
             </Copyright>
-            
+
             <MadeWith
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -277,4 +294,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
