@@ -25,7 +25,7 @@ const CenterBox = styled.div`
 const Title = styled(motion.h2)`
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-align: center;
   span {
     background: linear-gradient(to right, #0ea5e9, #38bdf8);
@@ -34,6 +34,14 @@ const Title = styled(motion.h2)`
     background-clip: text;
     color: transparent;
   }
+`;
+
+const SubTitle = styled.p`
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 32rem;
 `;
 
 const FeaturedGrid = styled.div`
@@ -316,6 +324,7 @@ const Projects = () => {
         >
           <span>Projects</span>
         </Title>
+        <SubTitle>기술적 도전과 협업을 통해 완성한 결과물들입니다.</SubTitle>
         <FeaturedGrid>
           {projects.map((project, index) => (
             <ProjectCard
