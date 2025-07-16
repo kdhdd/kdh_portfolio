@@ -12,8 +12,11 @@
   "dependencies": {
     "framer-motion": "^11.10.0",
     "lucide-react": "^0.460.0",
+    "notion-types": "^7.4.2",
+    "notion-utils": "^7.4.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-notion-x": "^7.4.2",
     "react-router-dom": "^6.28.0",
     "styled-components": "^6.1.19"
   },
