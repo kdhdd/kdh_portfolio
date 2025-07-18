@@ -7,7 +7,7 @@ import Hero from "./components/Hero";
 import Career from "./components/Career";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Thanks from "./components/Thanks";
+import Thanks from "./components/Thanks";1
 import Footer from "./components/Footer";
 
 const GlobalStyle = createGlobalStyle`

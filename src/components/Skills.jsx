@@ -34,7 +34,7 @@ const CenterBox = styled.div`
 `;
 
 const Title = styled(motion.h2)`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
   text-align: center;
@@ -48,7 +48,7 @@ const Title = styled(motion.h2)`
 `;
 
 const SubTitle = styled.p`
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #64748b;
   margin-bottom: 3rem;
   text-align: center;
@@ -73,7 +73,7 @@ const Card = styled(motion.div)`
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 2px 16px 0 #0001;
-  padding: 2rem;
+  padding: 1.5rem;
 `;
 
 const CardHeader = styled.div`

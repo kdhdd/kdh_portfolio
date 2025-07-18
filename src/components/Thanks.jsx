@@ -62,7 +62,7 @@ const Container = styled.div`
 `;
 
 const MainTitle = styled(motion.h2)`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   background: linear-gradient(to right, #0ea5e9, #38bdf8);
@@ -77,7 +77,7 @@ const MainTitle = styled(motion.h2)`
 `;
 
 const SubTitle = styled(motion.p)`
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #64748b;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -99,7 +99,7 @@ const MessageCard = styled(motion.div)`
 `;
 
 const MessageText = styled.p`
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: #334155;
   margin-bottom: 1.5rem;

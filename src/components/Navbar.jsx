@@ -31,16 +31,6 @@ const NavRow = styled.div`
     justify-content: flex-end;
   }
 `;
-const Logo = styled(motion.div)`
-  font-size: 2rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #0ea5e9, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  cursor: pointer;
-`;
 const NavLinks = styled.div`
   display: none;
   align-items: center;
@@ -53,7 +43,7 @@ const NavBtn = styled.button`
   background: none;
   border: none;
   color: #334155;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s;
@@ -97,7 +87,7 @@ const MobileNavBtn = styled.button`
   background: none;
   border: none;
   color: #334155;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   text-align: left;
   padding: 0.5rem 0;

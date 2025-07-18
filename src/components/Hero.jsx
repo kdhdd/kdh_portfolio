@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { ArrowDown, Github } from "lucide-react";
+import { ArrowDown, Github, Instagram } from "lucide-react";
 
 const Section = styled.section`
   position: relative;
@@ -40,7 +40,7 @@ const CenterBox = styled.div`
 `;
 
 const Title = styled(motion.h1)`
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   span {
@@ -53,7 +53,7 @@ const Title = styled(motion.h1)`
 `;
 
 const Description = styled(motion.p)`
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #64748b;
   margin-top: 1.5rem;
   margin-bottom: 3rem;
@@ -78,10 +78,10 @@ const PrimaryButton = styled(motion.button)`
   background: #0284c7;
   color: #fff;
   font-weight: 500;
-  padding: 0.75rem 2rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
-  font-size: 1.125rem;
-  border: none;
+  font-size: 1rem;
+  border: 2px solid #0284c7;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -89,6 +89,7 @@ const PrimaryButton = styled(motion.button)`
   transition: background 0.2s;
   &:hover {
     background: #0369a1;
+    border-color: #0369a1;
   }
 `;
 
@@ -97,9 +98,9 @@ const SecondaryButton = styled(motion.button)`
   border: 2px solid #0284c7;
   color: #0284c7;
   font-weight: 500;
-  padding: 0.75rem 2rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -119,8 +120,8 @@ const ScrollButton = styled(motion.button)`
   color: #64748b;
   background: #f8fafc;
   border-radius: 0.5rem;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.3rem 1.3rem;
+  font-size: 0.8rem;
   font-weight: 500;
   border: none;
   margin-bottom: 2rem;
@@ -165,6 +166,10 @@ const Hero = () => {
     window.open("https://github.com/kdhdd", "_blank");
   };
 
+  const openInstagram = () => {
+    window.open("https://instagram.com/xoehyun", "_blank");
+  };
+
   return (
     <Section id="home">
       <BgPattern aria-hidden="true" />
@@ -197,13 +202,14 @@ const Hero = () => {
             <Github size={20} />
             <span>GitHub</span>
           </PrimaryButton>
-          {/* <SecondaryButton
+          <SecondaryButton
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={openInstagram}
           >
-            <Download size={20} />
-            <span>Download CV</span>
-          </SecondaryButton> */}
+            <Instagram size={20} />
+            <span>Instagram</span>
+          </SecondaryButton>
         </ButtonRow>
         <ScrollButton
           initial={{ opacity: 0 }}
@@ -216,7 +222,7 @@ const Hero = () => {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <ArrowDown size={24} />
+            <ArrowDown size={20} />
           </motion.div>
         </ScrollButton>
       </CenterBox>
