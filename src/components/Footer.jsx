@@ -58,7 +58,7 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              © {new Date().getFullYear()}. kdh All rights reserved.
+              © 2025. kdh All rights reserved.
             </Copyright>
 
             <MadeWith

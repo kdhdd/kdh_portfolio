@@ -95,22 +95,19 @@ const Career = () => {
       title: "멋쟁이사자처럼 프론트엔드 아기사자",
       company: "LIKELION UNIV 13TH",
       period: "2025.03.15 - Present",
-      description:
-        "Led development of multiple React applications, mentored junior developers, and implemented best practices for code quality and performance.",
+      description: "서경대학교 멋쟁이사자처럼 프론트엔드 아기사자 활동",
     },
     {
       title: "서경SW 아카데미",
       company: "Seokyeong University",
       period: "2025.02.17 - 2025.07.01",
-      description:
-        "Built and maintained web applications using React, Node.js, and MongoDB. Collaborated with design and product teams.",
+      description: "서경대학교 SW 아카데미 수료",
     },
     {
       title: "멋쟁이사자처럼 백엔드 아기사자",
       company: "LIKELION UNIV 12TH",
       period: "2024.03.09 - 2024.12.02",
-      description:
-        "Developed responsive websites and web applications. Worked with various technologies including JavaScript, HTML, CSS.",
+      description: "서경대학교 멋쟁이사자처럼 백엔드 아기사자 수료",
     },
   ];
 
